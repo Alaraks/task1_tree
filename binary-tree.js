@@ -1,4 +1,10 @@
 'use strict';
+function root(data)
+{
+	this.data = data
+	this.left =  null
+	this.right = null
+}
 
 class BinaryTree {
 	constructor() {
@@ -17,7 +23,7 @@ class BinaryTree {
 		if(element[dir] == null)
 			element[dir] = new Node(data);
 		else
-			this.place_node(element[dir], data);
+			this.node_position(element[dir], data);
 	}
 
 	contains(data) {
@@ -49,7 +55,7 @@ class BinaryTree {
 			}
 			else {
 				prev = temp;
-				temp = (data < iter.data) ? iter.left : iter.right;
+				temp = (data < temp.data) ? temp.left : temp.right;
 			}
 		}
 	}
